@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<!-- NEED -->  <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+#sorce a {
+  padding: 0px 16px 0px 24px; /* top right bottom left */
+
+  color: #999999 !important;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  text-decoration: none;
+}
+#main {
+  transition: margin-right .5s;
+  padding: 0px 16px 0px 24px; /* top right bottom left */
+
+}
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.242em;
+  background-color: #111;
+  color: #fff1e5;
+
+}
+body a {
+  color: #E5D8CE;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: #fff1e5;
+    color: #33302e;
+    border-radius: 5px; /* 5px rounded corners */
+    width: 15.242em;
+    font-family: 'Cormorant Garamond', serif;
+}
+.card a {
+  color: #111;
+}
+.container {
+  padding: 2px 16px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#one {
+font-size: 1.242em;
+color: #111111;
+background-color: #fff1e5;
+font-weight: medium;
+}
+#ReturnScripture{
+  font-size: 1.242em;
+  color: #111111;
+  display: block;
+  background-color: #fff1e5;
+   margin-left:36px;
+   font-weight: medium;
+}
+#about {
+    display: none;
+}
+</style>
+
+<script src="seedrandom.min.js">
+</script><!-- http://davidbau.com/encode/seedrandom.js -->
+
+
+</head>
+<!-- BODY START ----------------------------------->
+<body id="body">
+  Back to <h1 id="sorce"> <a href="https://sorcerawr.com" id="sorce">SorceRawr.com</a> </h1>
+
+<div id="main">
+    <h1><a href="" style="text-decoration: none;"> SCRIPTURE ENTROPY </a> </h1> <!-- hardlink to page -->
+    <a href="javascript:void(0)" onclick="openA()" > ABOUT </a>
+    <br>
+    <script> //show about
+    function openA() {
+      $("#about").toggle();
+
+}
+    </script>
+
+    <a href="https://divinescripture.art"> FIXED ENTROPY </a>
+
+    <br>
+    <!-- <p>Click the button to output scripture.</p> -->
+    <br>
+   Set Entropy    <input type="text" name="one" id="one" placeholder="enter word">
+   <br>
+  <button id ="ReturnScripture" onclick="retrieveScripture(document.getElementById('one').value)"
+style="" > <!--padding-left: 36px; padding-right: 36px; -->
+  Return Scripture </button>
+
+    <script src="prescripture.js"></script>
+    <script src="scripture2.js"></script>
+    <script>
+      function retrieveScripture(entropy) {
+        document.getElementById("output").innerHTML = getScripture(entropy);
+      }
+    </script>
+    <br>
+
+<div class="card">
+  <div class="container">
+        <p id="output"></p>
+
+        <div style="display:inline;" id="scripture" class="scripture"></div>
+  </div>
+</div>
+
+<div id="about">
+
+
+  <br> <br>
+
+ Scripture Entropy uses your word as entropy in a rog to generate scripture.
+ <br> <br>
+  Using the <b> fixed entropy version </b> of Scripture Entropy should always output the same verse. <br> <br>
+  Using the <b> additional entropy </b>  version of Scripture Entropy should always output a different verse. <br><br>
+  In the additional entropy version, your word will still be passed in as entropy, along with
+  additional entropy created from the current date/time, your mouse movements and keystrokes.
+  <br><br>
+ Scripture Entropy takes your chosen word and passes it as a seed into
+ an rog [random number generator] which then randomly picks a book, chapter, and verse
+ from the WEB [World English Bible] then retrieves that scripture from bible-api.com.
+<br>
+ Note that the verse [such as "Psalms 1:1"] is a clickable link that will direct you to the retrieved scripture on bible-api.com.
+<br><br>
+ It would be ill advised to take any output from Scripture Entropy any sort of 'divine message' (this is called 'Divination')
+ or revelation as you are not getting truly random output from your chosen word, the output is still affected (or 'filtered', if you will) by the
+ random number generator which was not designed for this usage.
+<br><br><br><br>
+ My favorite scripture is not in this program, as the book of Sirach is not included in modern bible translations.
+ I keep my favorite of those here at <a href="https://sorcerawr.com/thewisdom"> The Wisdom </a>.
+<br><br>
+
+ bitcoin donation address: bc1q99vng5nykfjv7vy8crj7p3a4nluwgm44mup20a <br>
+ ethereum donation address: 0x39c7C9FdB10Df996d59590fd5cC52483a919EB29   <br> <br>
+
+  Created by <b> <a href="https://jamesbyt.es"> James T. Bytes</a>. </b>
+</div>
+
+</body>
+</html>
